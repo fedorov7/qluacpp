@@ -57,13 +57,6 @@ QLUACPP_DETAIL_API_FUNCTION4(bool, // Функция возвращает «nil�
                              const unsigned int, t_id
                              )
 
-template <typename T>
-T GetCell(const unsigned int t_id,
-          const unsigned int key,
-          const unsigned int code) const {
-  typedef std::tuple<T> return_type;                
-  return std::get<0>(l_.call<return_type>(GetCell, t_id, key, code));
-}                                                             
 
 // GetTableSize - получает количество строк и столбцов
 QLUACPP_DETAIL_API_FUNCTION_TUPLE2_5(int, int,
